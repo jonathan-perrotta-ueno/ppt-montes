@@ -52,7 +52,7 @@ li small{display:block;font-size:1.5vw;color:var(--dim);margin-top:.6vh;line-hei
   align-items:center;justify-content:center;gap:1.4vh;background:#0f1d15}
 .gifslot .tag{font-size:1.3vw;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
 .gifslot .what{font-size:1.7vw;color:var(--dim);text-align:center;max-width:40ch;line-height:1.4}
-.gifslot img{width:100%;height:100%;object-fit:contain;border-radius:8px}
+.gifslot img,.gifslot video{width:100%;height:100%;object-fit:contain;border-radius:8px}
 blockquote{font-family:var(--serif);font-size:4.4vw;line-height:1.18;letter-spacing:-.015em;
   border-left:4px solid var(--accent);padding-left:3vw}
 .url{font-family:var(--sans);font-size:4.6vw;color:var(--accent);letter-spacing:-.01em;
@@ -191,7 +191,7 @@ blockquote{font-family:var(--serif);font-size:4.4vw;line-height:1.18;letter-spac
   <div class="kicker">Cómo se ve</div>
   <h3>El mail de rechazo de débito ya no lo escribe nadie. Sale de una plantilla que edita Recaudación.</h3>
   <div class="gifslot" data-gif="01-templates">
-    <img src="gifs/01-templates.gif" alt="Editor de templates de email del backoffice">
+    <video src="gifs/01-templates.mp4" autoplay muted loop playsinline></video>
   </div>
 </section>
 
@@ -279,7 +279,7 @@ blockquote{font-family:var(--serif);font-size:4.4vw;line-height:1.18;letter-spac
 <section class="slide" data-notes="21:00 — El GIF más importante de la charla: el expediente visto desde el backoffice, en staging y con datos ficticios. Esperá al último cuadro, el Historial: de Recibido desde el portal a Finalizado con placa entregada en 12 minutos, con ecotasa pagada en el medio.">
   <div class="kicker">Todo el trámite, sin mostrador</div>
   <div class="gifslot" data-gif="04-alta-utv">
-    <img src="gifs/04-alta-utv.gif" alt="Expediente UTV en el backoffice, de recibido a finalizado">
+    <video src="gifs/04-alta-utv.mp4" autoplay muted loop playsinline></video>
   </div>
 </section>
 
@@ -354,6 +354,7 @@ blockquote{font-family:var(--serif);font-size:4.4vw;line-height:1.18;letter-spac
   function go(n){
     i=Math.max(0,Math.min(s.length-1,n));
     s.forEach(function(el,k){el.classList.toggle('on',k===i)});
+    var v=s[i].querySelector('video'); if(v){try{v.currentTime=0;v.play()}catch(e){}}
     hud.textContent=(i+1)+' / '+s.length;
     bar.style.width=((i+1)/s.length*100)+'%';
     nb.innerHTML=s[i].dataset.notes?s[i].dataset.notes.replace(/^(\d+:\d+)/,'<b>$1</b>'):'';
