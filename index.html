@@ -59,6 +59,24 @@ blockquote{font-family:var(--serif);font-size:4.4vw;line-height:1.18;letter-spac
   margin-top:5vh;font-weight:500}
 .src{font-size:1.3vw;color:#6b7b70;margin-top:3vh}
 .mark{color:var(--accent)}
+.chat{background:#0f1d15;border:1px solid var(--line);border-radius:14px;padding:2.2vh 1.8vw;max-width:62vw}
+.chead{font-size:1.2vw;color:var(--dim);display:flex;align-items:center;gap:.6vw;padding-bottom:1.6vh;border-bottom:1px solid var(--line);margin-bottom:2vh}
+.chead .dot{width:.7vw;height:.7vw;border-radius:50%;background:var(--accent)}
+.msg{font-size:1.75vw;line-height:1.4;border-radius:12px;padding:1.6vh 1.3vw;margin-bottom:1.8vh;max-width:88%}
+.msg.u{background:var(--deep);color:#fff;margin-left:auto;width:fit-content}
+.msg.a{background:var(--bg2);border:1px solid var(--line)}
+.msg.a strong{color:var(--accent)}
+.chart{display:flex;gap:.9vw;align-items:flex-end;height:17vh;margin-top:2.2vh}
+.cb{flex:1;display:flex;flex-direction:column;align-items:center;height:100%}
+.cbp{flex:1;width:100%;display:flex;gap:.2vw;align-items:flex-end}
+.cbp i,.cbp b{flex:1;border-radius:3px 3px 0 0;display:block}
+.cbp i{background:var(--line)}.cbp b{background:var(--accent)}
+.cb span{font-size:1vw;color:var(--dim);margin-top:.5vh}
+.leg{display:flex;gap:1.5vw;font-size:1.05vw;color:var(--dim);margin-top:1.2vh;align-items:center}
+.leg i,.leg b{display:inline-block;width:.8vw;height:.8vw;border-radius:2px;margin-right:.4vw}
+.leg i{background:var(--line)}.leg b{background:var(--accent)}.leg em{margin-left:auto;font-style:normal;opacity:.8}
+.slide.on .msg.u{animation:in .5s .3s both}.slide.on .msg.a{animation:in .6s 1.3s both}
+@keyframes in{from{opacity:0;transform:translateY(1.2vh)}to{opacity:1;transform:none}}
 #hud{position:fixed;bottom:2.2vh;right:2.5vw;font-size:1.2vw;color:#4c5c51;
   font-variant-numeric:tabular-nums;z-index:10}
 #bar{position:fixed;top:0;left:0;height:3px;background:var(--deep);z-index:10;transition:width .3s}
@@ -198,12 +216,16 @@ blockquote{font-family:var(--serif);font-size:4.4vw;line-height:1.18;letter-spac
   <p class="body">Cada quien ve lo que su función habilita. No hay una puerta única a todo.</p>
 </section>
 
-<section class="slide" data-notes="13:00 — GIF, NO en vivo. Un comparativo anual en vivo es demasiado riesgo para ganar poco: va grabado.">
+<section class="slide" data-notes="13:00 — NO es en vivo ni captura: es una recreación de la consulta con datos reales de la base municipal (recaudación cobrada enero-octubre, valores nominales, al 31/10/2026). Decí que es nominal, sin ajustar por inflación, antes de que te lo pregunten.">
   <div class="kicker">Una pregunta, en castellano</div>
-  <h3>«¿Cómo viene la cobrabilidad de la tasa este año contra el año pasado?»</h3>
-  <div class="gifslot" data-gif="02-consulta">
-    <div class="tag">GIF pendiente</div>
-    <div class="what">Consulta en lenguaje natural sobre la base municipal, con la respuesta en pantalla</div>
+  <div class="chat">
+    <div class="chead"><span class="dot"></span>Asistente de gestión · Municipalidad de Pinamar</div>
+    <div class="msg u">¿Cómo viene la recaudación este año contra el año pasado?</div>
+    <div class="msg a">
+      <p>Entre enero y octubre se cobraron <strong>$ 57.677 millones</strong>, contra <strong>$ 40.502 millones</strong> en el mismo período de 2025: <strong>+42% nominal</strong>, sin ajustar por inflación.</p>
+      <div class="chart"><div class="cb"><div class="cbp"><i style="height:63.6%"></i><b style="height:100.0%"></b></div><span>E</span></div><div class="cb"><div class="cbp"><i style="height:54.8%"></i><b style="height:87.3%"></b></div><span>F</span></div><div class="cb"><div class="cbp"><i style="height:47.7%"></i><b style="height:78.5%"></b></div><span>M</span></div><div class="cb"><div class="cbp"><i style="height:45.3%"></i><b style="height:66.8%"></b></div><span>A</span></div><div class="cb"><div class="cbp"><i style="height:48.9%"></i><b style="height:60.5%"></b></div><span>M</span></div><div class="cb"><div class="cbp"><i style="height:44.6%"></i><b style="height:60.7%"></b></div><span>J</span></div><div class="cb"><div class="cbp"><i style="height:52.6%"></i><b style="height:75.9%"></b></div><span>J</span></div><div class="cb"><div class="cbp"><i style="height:47.9%"></i><b style="height:62.8%"></b></div><span>A</span></div><div class="cb"><div class="cbp"><i style="height:54.9%"></i><b style="height:69.2%"></b></div><span>S</span></div><div class="cb"><div class="cbp"><i style="height:52.2%"></i><b style="height:68.4%"></b></div><span>O</span></div></div>
+      <div class="leg"><span><i></i>2025</span><span><b></b>2026</span><em>Recreación · datos reales al 31/10/2026</em></div>
+    </div>
   </div>
 </section>
 
